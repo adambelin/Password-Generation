@@ -1,13 +1,15 @@
 // Assignment code here
 
-// 
+// number generation strings
 const lowerCharset = "abcdefghijklmnopqrstuvwxyz"
 const upperCharset = lowerCharset.toUpperCase()
 const specialCharset = "~!@#$%^&*()_+?><"
 const numberCharset = "1234567890"
 
+// password generator function
 function generatePassword() {
 
+  // prompt to enter password number length
   let length = prompt ("enter length");
   length=parseInt(length)
   if (isNaN (length) || (length <8 || length >128)){
@@ -15,6 +17,7 @@ function generatePassword() {
     return;
   }
 
+  // prompts to include necessary variables for password generation
   let specialChars = confirm ("do you want to include a special character")
   
   let numericChars = confirm ("do you want to include any numbers?");
@@ -30,6 +33,7 @@ function generatePassword() {
   
     console.log (length);
 
+  // clauses to make sure the password includes at the minimum one of the password variables
   let password = ""
   let charset = ""
   if (specialChars){
@@ -52,14 +56,6 @@ function generatePassword() {
 
   return password;
 }
-
-// if (specialCharset){
-//   let passwordIndex = Math.floor(Math.random() * password.length);
-//   let specialCharsIndex = Math.floor(Math.random() * specialCharset.length);
-//   password = password.split("")
-//   password [passwordIndex = specialCharset.charAt(index.specialChars)]
-//   password = password.join()
-// }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
